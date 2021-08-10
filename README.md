@@ -1,6 +1,26 @@
-# TheBank
+# TheBank :seedling:
+
+Test Paper - Part 1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
+
+This project implements a bank transactions solution. It has two main features:
+
+- Submitted Transactions
+- New Transaction
+
+It can be accesed with the following credentials
+```bash
+john
+p777
+```
+
+### Package list
+
+ - :file_folder:**components** Angular components such as menu, login, submitted transactions, etc.
+ - :file_folder:**services** Contains services logic used from components.
+ - :file_folder:**model** Data objects.
+ - :file_folder:**material** Angular/material imports.
 
 ## Development server
 
