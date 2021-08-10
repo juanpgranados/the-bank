@@ -10,9 +10,9 @@ import { IsLoggedCanActiveService } from './services/is-logged-can-active.servic
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent, canActivate: [IsLoggedCanActiveService]},
+  { path: 'home', component: HomeComponent, canActivate: [IsLoggedCanActiveService] },
   { path: '', redirectTo: '/home', pathMatch: 'full'},
-  { path: 'transaction', component: TransactionComponent }
+  { path: 'transaction', component: TransactionComponent, canActivate: [IsLoggedCanActiveService] }
 ];
 
 @NgModule({

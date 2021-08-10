@@ -32,8 +32,7 @@ export class AuthService {
   }
 
   isAuthenticated():boolean {
-    //return this.logged;
-    return true;
+    return this.logged;
   }
 
   getUserFullName():string {
