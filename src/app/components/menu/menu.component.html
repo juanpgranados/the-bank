@@ -1,0 +1,9 @@
+<mat-toolbar color="primary" class="nav-bar">
+    <div>The Bank</div>
+    <div>
+      <span><a [routerLink]="['/transaction']" routerLinkActive="active-link"><span>Transaction</span></a></span>
+      <span><a [routerLink]="['/home']" routerLinkActive="active-link"><span>Submitted</span></a></span>
+      <span>{{userFullName}}</span>
+      <span><a [routerLink]="['/home']" (click)="onLogout()">Log out</a></span>
+    </div>
+  </mat-toolbar>

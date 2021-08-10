@@ -1,0 +1,90 @@
+<app-menu></app-menu>
+<mat-card>
+    <mat-card-title>New Transaction</mat-card-title>
+<mat-card-content>
+<form [formGroup]="txForm" (ngSubmit)="onSave()" appearance="fill">
+  <p>
+    <mat-radio-group aria-label="Select an option" formControlName="newTx">
+        <mat-radio-button value="true">New</mat-radio-button>
+        <mat-radio-button value="false">Existing</mat-radio-button>
+    </mat-radio-group>
+</p>
+
+<p>
+    <mat-form-field>
+        <input type="text" matInput placeholder="Reference" formControlName="reference">
+      </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Customer Number" formControlName="customerNumber">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Customer Name" formControlName="customerName">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Customer Address" formControlName="customerAddress">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Customer Phone Number" formControlName="customerPhoneNumber">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Transfer Ammount" formControlName="ammount">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Currency</mat-label>
+        <mat-select formControlName="currency">
+            <mat-option *ngFor="let currency of keys(currenciesEnum)" [value]="currenciesEnum[currency]">
+            {{currenciesEnum[currency]}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Beneficiary Bank" formControlName="beneficiaryBank">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Beneficiary Account Number" formControlName="beneficiaryAccountNumer">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Payment Details" formControlName="paymentDetails">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Credit/Debit Card Details" formControlName="cardDetails">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+        <mat-label>Region</mat-label>
+        <mat-select formControlName="region">
+            <mat-option *ngFor="let region of keys(regionsEnum)" [value]="regionsEnum[region]">
+            {{regionsEnum[region]}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+  </p>
+
+  <p *ngIf="error" class="error">
+    {{ error }}
+  </p>
+
+  <div class="button">
+    <button type="submit" mat-button>Save</button>
+  </div>
+
+</form>
+</mat-card-content>
+</mat-card>
